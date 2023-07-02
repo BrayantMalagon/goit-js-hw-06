@@ -12,3 +12,16 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+// Selección de la etiqueta <ul>
+let listImgs = document.getElementsByClassName('gallery')[0]; // [0] quita el array
+console.log(listImgs);
+
+let arrayElements = [];
+images.forEach(element => {
+  arrayElements.push(
+    `<img src="${element.url}" alt="${element.alt}" width="600">`,
+  );
+});
+console.log(arrayElements);
+let htmlImages = arrayElements.join('');
+listImgs.innerHTML = htmlImages;
